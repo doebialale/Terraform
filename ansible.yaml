@@ -1,0 +1,55 @@
+---
+- name: iluvnano
+  hosts: centos
+  tasks:
+    - name: ensure nano is there
+      yum:
+        name: nano
+        state: latest
+
+
+
+---
+- name: play1
+  sudo: yes
+  hosts: ami
+  tasks:
+    - name: install apache
+      yum:
+        name=apache2
+        state=latest
+
+
+        
+        
+[linux]
+
+50.116.30.110
+50.116.30.139
+
+[linux:vars]
+
+ansible_user=root
+ansible_password=P@$$W0RdSimple123
+
+
+[ami]
+
+3.144.123.185
+18.219.13.243
+
+[ami:vars]
+
+ansible_user=ec2-user
+ansible_password=
+
+
+[linux]
+
+50.116.30.110
+50.116.30.139
+
+[linux:vars]
+
+ansible_user=ec2-user
+ansible_password=
